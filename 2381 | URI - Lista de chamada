@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define max_student 120
+#define max_name 30
+
+typedef struct{char name[max_name];}TStudent;
+
+int compara(const void *, const void *);
+
+int main(){
+		
+	TStudent Class[max_student];
+	int n, k, index;
+	
+	scanf("%d %d", &n, &k);
+	
+	for(index=0; index<n; index++)
+		scanf("%s", Class[index].name);
+	
+	qsort(Class, n, sizeof(TStudent), compara);
+	
+	printf("%s\n", Class[k-1].name);
+	
+	return 0;
+}
+
+int compara(const void *p1, const void *p2){
+	TStudente *index = (TStudent *)p1, *j = (TStudent *)p2;
+	
+	return strcmp(i->name, j->name);
+}
